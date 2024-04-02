@@ -4,6 +4,7 @@ import { Box, Divider,  List, ListItem, ListItemButton, ListItemIcon, ListItemTe
 import { InboxOutlined, MailOutline } from '@mui/icons-material';
 import { useNavigate } from 'react-router';
 import RedButton from './RedButton';
+import { useTranslation } from 'react-i18next';
 
 type DrawerListProps = { 
   toggleDrawer: (newOpen: boolean) => void,
@@ -11,14 +12,20 @@ type DrawerListProps = {
 }
 
 const links = [
-  { title: 'Home Page', url: '/'},
   { title: 'Login Page', url: '/login' },
-  { title: 'Orders', url: '/orders'}
+  { title: 'Home Page', url: '/'},
+  { title: 'Orders', url: '/orders' },
+  { title: "Products", url: "/products"},
+  { title: "Payment", url: "/payments"},
+  { title: "QR Code", url: "/qr-codes"},
+  { title: "Users", url: "/users"},
+  { title: "Profiles", url: "/profiles"}
 ]
 
 const DrawerList = ({toggleDrawer, setAuth}: DrawerListProps) => {
   
   const navigate = useNavigate()
+  const { t } = useTranslation()
   const theme = useTheme()
 
   const handleLogout = () => {
@@ -28,46 +35,9 @@ const DrawerList = ({toggleDrawer, setAuth}: DrawerListProps) => {
 
   return (
     <Box sx={{display: 'flex', flexDirection: 'column', width: 250, height: '100vh' }} p={2} role="presentation" onClick={() => toggleDrawer(false)}>
-      {/* <Typography>{`Pizzas (${pizzas.length})`}</Typography>
-      <List>
-        {pizzas.map((pizza, index) => (
-          <ListItem 
-            key={pizza.id} 
-            sx={{'&:hover': { backgroundColor: theme.palette.customColor.main }}} 
-            disablePadding 
-            onClick={() => navigate(`/product/${pizza.id}`, {state: {category: pizza.category}})}
-          >
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxOutlined /> : <MailOutline />}
-              </ListItemIcon>
-              <ListItemText primary={pizza.name} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
       <Divider />
       <List>
-        <Typography>{`Kebabs (${kebabs.length})`}</Typography>
-        {kebabs.map((kebab, index) => (
-          <ListItem 
-            key={kebab.id} 
-            sx={{'&:hover': { backgroundColor: theme.palette.customColor.main }}} 
-            disablePadding 
-            onClick={() => navigate(`/product/${kebab.id}`, {state: {category: kebab.category}})}
-          >
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxOutlined /> : <MailOutline />}
-              </ListItemIcon>
-              <ListItemText primary={kebab.name} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List> */}
-      <Divider />
-      <List>
-        <Typography>Links</Typography>
+        <Typography>{t('appBar.links')}</Typography>
         {links.map((link, index) => (
           <ListItem 
             key={index} 
@@ -79,15 +49,16 @@ const DrawerList = ({toggleDrawer, setAuth}: DrawerListProps) => {
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxOutlined /> : <MailOutline />}
               </ListItemIcon>
-              <ListItemText primary={link.title} />
+              <ListItemText primary={t(`temporary.${link.title}`)} />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
+      <Divider />
       {
         JSON.parse(localStorage.getItem('auth') ?? 'false') &&
         <RedButton
-          text={'Logout'}
+          text={t('buttons.logout')}
           action={handleLogout}
           style={{ width: '100%', height: '56px', backgroundColor: theme.palette.customColor.main, marginTop: 'auto' }}
         />

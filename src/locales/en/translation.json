@@ -3,10 +3,18 @@
     "products": "Products",
     "orders": "Orders",
     "basket": "Basket",
-    "login" : "Login"
+    "login" : "Login",
+    "payments": "Payments",
+    "qr": "QR Code",
+    "users": "Users",
+    "profiles": "Profiles",
+    "homePage": "Home Page",
+    "links": "Links"
+    
   }, 
   "orderPage": {
-    "order": "Order"
+    "order": "Order",
+    "ready": "Ready"
   },
   "productsPage": {
     "pizza": "Pizza",
@@ -20,6 +28,11 @@
     "creditcard": "Credit Card",
     "payManualy": "Pay Manualy",
     "applePay": "Apple Pay"
+  },
+  "loginPage": {
+    "loginToOms": "Login to OMS",
+    "email": "Email",
+    "password": "Password"
   },
   "landingPage": {
     "login": "Login",
@@ -38,6 +51,17 @@
     "basket": "Basket",
     "pay": "Pay",
     "newOrder": "New Order",
-    "addToBasket": "Add To Basket"
+    "addToBasket": "Add To Basket",
+    "logout": "Logout"
+  },
+  "temporary": {
+    "Products": "Products",
+    "Payment": "Payment",
+    "QR Code": "QR Code",
+    "Users": "Users",
+    "Profiles": "Profiles",
+    "Orders": "Orders",
+    "Home Page": "Home Page",
+    "Login Page": "Login Page"
   }
 }

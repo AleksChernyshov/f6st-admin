@@ -19,12 +19,12 @@ const OrdersPage = ({ setAuth }: OrdersPageProps) => {
   const orders = JSON.parse(localStorage.getItem('orders') ?? '[]')
 
   return <>
-    <AppBar pageTitle={t('appBar.orders')} setAuth={setAuth} />
+    <AppBar backButton pageTitle={t('appBar.orders')} setAuth={setAuth} />
     <Container style={{marginBottom: '120px'}}>
 
       {
         orders.map((order: Order) => {
-          return <Paper elevation={3} sx={{padding: '12px', marginY: 2, display: 'flex', flexDirection: 'column', gap: 2}}>
+          return <Paper elevation={3} sx={{padding: '12px', marginY: 2, display: 'flex', flexDirection: 'column', gap: 2}} key={order.orderId}>
             <Box mt={2} display='flex' flexDirection='column' gap={2}>
               <Typography variant="h5" component="div">
                 { `${t('orderPage.order')}: ${order.orderId}` }
@@ -41,7 +41,7 @@ const OrdersPage = ({ setAuth }: OrdersPageProps) => {
             </Box>
             
             <RedButton
-              text={'Ready'}
+              text={t('orderPage.ready')}
               action={() => navigate('/')}
               style={{ width: '100%', height: '56px', alignSelf: 'center', backgroundColor: theme.palette.customColor.main }}
             />

@@ -35,9 +35,9 @@ const Login = ({ setAuth }: LoginProps) => {
     <Container>
       <Box component="form" onSubmit={handleSubmit} mt={4}  sx={{ display: 'flex', marginX: 'auto', maxWidth: '400px', justifyContent: 'center', alignItems: 'center' }}>
         <Paper elevation={3} sx={{ display: 'flex', flexDirection: 'column', gap: 2, padding: '12px', width: '100%' }}>
-          <Typography variant="h6">Login to OMS</Typography>
-          <TextField label="Email" variant="outlined" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-          <TextField label="Password" variant="outlined" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <Typography variant="h6">{ t('loginPage.loginToOms') }</Typography>
+          <TextField label={ t('loginPage.email') } variant="outlined" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <TextField label={ t('loginPage.password') } variant="outlined" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           <RedButton
             text={t('appBar.login')}
             action={handleSubmit}

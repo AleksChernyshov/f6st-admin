@@ -3,11 +3,18 @@
     "products": "Termékek",
     "orders": "Rendelések",
     "basket": "Kosár",
-    "login" : "Login"
+    "login" : "Belépés",
+    "payments": "Fizetés",
+    "qr": "QR kód",
+    "users": "Felhasználók",
+    "profiles": "Profilok",
+    "homePage": "Kezdőlap",
+    "links": "Linkek"
   }, 
   "orderPage": {
     "order": "Rendelés",
-    "newOrder": "Új rend"
+    "newOrder": "Új rend",
+    "ready": "Kész"
   },
   "productsPage": {
     "pizza": "Pizza",
@@ -21,6 +28,11 @@
     "creditcard": "Hitelkártya",
     "payManualy": "Fizessen manuálisan",
     "applePay": "Apple Pay"
+  },
+  "loginPage": {
+    "loginToOms": "Bejelentkezés az OMS-be",
+    "email": "E-mail",
+    "password": "Jelszó"
   },
   "landingPage": {
     "login": "Belépés",
@@ -39,6 +51,17 @@
     "basket": "Kosár",
     "pay": "Fizetés",
     "newOrder": "Új rend",
-    "addToBasket": "Kosárba helyez"
+    "addToBasket": "Kosárba helyez",
+    "logout": "Kijelentkezés"
+  },
+  "temporary": {
+    "Products": "Termékek",
+    "Payment": "Fizetés",
+    "QR Code": "QR kód",
+    "Users": "Felhasználók",
+    "Profiles": "Profilok",
+    "Orders": "Rendelések",
+    "Home Page": "Kezdőlap",
+    "Login Page": "Bejelentkezési oldal"
   }
 }
